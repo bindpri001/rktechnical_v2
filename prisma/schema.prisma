@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  SUPERADMIN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model User {
+  id String @id @default(cuid())
+
+  username String
+  email    String  @unique
+  phone    String?
+  password String
+
+  role     UserRole @default(USER)
+  isActive Boolean  @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([username])
+  @@index([email])
+}
+
+model Staff {
+  id String @id @default(cuid())
+
+  fullName       String
+  designation    String
+  qualification  String?
+
+  experience    Int?
+
+  phone          String?
+  email          String? @unique
+
+  address        String?
+
+  photoUrl       String?
+  photoPublicId  String?
+
+  displayOrder   Int @default(0)
+
+  isActive       Boolean @default(true)
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([displayOrder])
+  @@index([fullName])
+  @@index([designation])
+}
+
+model Student {
+  id String @id @default(cuid())
+
+  // Certificate Details
+  registrationNo String @unique
+  certificateNo  String @unique
+
+  // Personal Details
+  studentName String
+  fatherName  String
+  motherName  String?
+
+  photoUrl      String?
+  photoPublicId String?
+
+  address   String
+  contactNo String
+
+  dob    DateTime
+  gender Gender
+
+  aadhaarNo     String?
+  qualification String?
+
+  // Course Details
+  courseName String
+
+  /// Duration in months
+  courseDuration Int
+
+  admissionDate        DateTime
+  completionDate       DateTime
+  certificateIssueDate DateTime?
+
+  // Result
+  percentage Decimal @db.Decimal(5, 2)
+  grade      String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([studentName])
+  @@index([registrationNo])
+  @@index([certificateNo])
+  @@index([aadhaarNo])
+  @@index([courseName])
+  @@index([completionDate])
+  @@index([certificateIssueDate])
+}
