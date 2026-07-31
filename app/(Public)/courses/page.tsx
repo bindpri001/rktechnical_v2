@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
@@ -20,7 +19,7 @@ const courseData = [
     regFee: "₹500/-",
     themeColor: "from-blue-600 to-indigo-600",
     lightColor: "bg-blue-50 text-blue-700 border-blue-100",
-    image: "/images/img2.jpg", // Using one of the hero images for premium look, ideally you'd replace with specific course images
+    image: "/adar.png", // Using one of the hero images for premium look, ideally you'd replace with specific course images
     modules: [
       { id: 1, title: "House Wiring", icon: LuZap, topics: ["Switch board installation", "MCB & DB box", "Wire & wiring connection", "Light, fan, socket wiring", "Safety & fault finding"] },
       { id: 2, title: "Cooler Repair", icon: LuWind, topics: ["Motor repairing", "Pump repairing", "Wiring & connection", "Servicing & maintenance"] },
@@ -41,7 +40,7 @@ const courseData = [
     regFee: "₹500/-",
     themeColor: "from-rose-500 to-orange-500",
     lightColor: "bg-rose-50 text-rose-700 border-rose-100",
-    image: "/images/img3.jpg",
+    image: "/pcb.png",
     modules: [
       { id: 1, title: "Basic Electronics", icon: LuZap, topics: ["Principles of electronics", "Voltage, current, resistor", "Diode, capacitor, IC", "Multimeter usage"] },
       { id: 2, title: "Intro to PCB", icon: LuSettings, topics: ["What is PCB & working", "Single & double layer", "Component identification", "Circuit diagrams reading"] },

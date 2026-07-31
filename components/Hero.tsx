@@ -9,10 +9,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const carouselImages = [
-  "/images/img1.jpg",
-  "/images/img2.jpg",
-  "/images/img3.jpg",
-  "/images/img4.jpg",
+  "/images/1.jpeg",
+  "/images/2.jpeg",
+  "/images/3.jpeg",
+  "/images/4.jpeg",
+  "/images/5.jpeg",
+  "/images/6.jpeg",
 ];
 
 export default function Hero() {
