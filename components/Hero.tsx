@@ -156,7 +156,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative w-full aspect-[4/3] max-w-[800px] mx-auto z-10"
+              className="relative w-full aspect-video max-w-[900px] mx-auto z-10"
             >
               {/* Soft decorative shadow block behind carousel */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-[3rem] rotate-3 scale-[1.02] -z-10 blur-xl" />
